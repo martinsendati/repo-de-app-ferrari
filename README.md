@@ -1,1 +1,0 @@
-# repo-de-app-ferrari
