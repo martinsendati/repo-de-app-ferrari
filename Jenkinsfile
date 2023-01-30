@@ -60,6 +60,13 @@ spec:
     }
   
     stages {
+        
+        stage('test variables de entorno') {
+            steps { 
+                sh "echo $GIT_URL"
+                sh "echo ${GIT_URL}"
+            }
+        }  
 
         stage('Clonar repo de aplicacion ferrari') {
             steps { 
