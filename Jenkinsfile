@@ -63,8 +63,8 @@ spec:
         
         stage('test variables de entorno') {
             steps { 
-                sh "echo $GIT_URL"
-                sh "echo ${GIT_URL}"
+                sh "echo $JOB_NAME"
+                sh "echo ${JOB_NAME}"
             }
         }  
 
