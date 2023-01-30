@@ -70,7 +70,7 @@ spec:
 
         stage('Clonar repo de aplicacion ferrari') {
             steps { 
-                git branch: 'main', changelog: false, poll: false, url: '$GIT_URL'
+                git branch: 'main', changelog: false, poll: false, url: ${GIT_URL}
             }
         }        
          stage('buildear imagen') {
