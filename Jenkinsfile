@@ -5,9 +5,12 @@ pipeline {
    //   Jenkins tiene 2 tipos de variable de entorno, internas y externas. 
    //   Las internas son las que definimos nostros mismos dentro del jenkinsfile, dentro de enviroment,como por ej: REGISTRY y PASS
    //   Las externas son las que Jenkins nos permitie traernos desde afuera del Jenkinsfile, como por ej: BUILD_NUMBER y GIT_URL
-   //   Antes, insertabamos la variable externa BUILD_NUMBER dentro de la var interna APP_TAG. Esto lo haciamos porque nosotros utilizamos el BUILD_NUMBER 
+   //   Para el caso de APP_NAME elegimos insertar la var externa JOB_NAME dentro de la var interna definida por nosotros APP_NAME. Esto lo hacemos para que el nombre
+   //   de la var sea mas descriptivo del uso que le estamos dando. 
+   //   Para el caso de la var APP_TAG estamos usando directamente BUILD_NUMBER ( APP_TAG = "${BUILD_NUMBER}" )solamente para ver que se puede hacer de ambas formas
+   //   Antes, insertabamos la variable externa BUILD_NUMBER dentro de la var interna APP_TAG, como se mostró anteriormente. Esto lo haciamos porque nosotros utilizamos el BUILD_NUMBER 
    //   Jenkins para usar el APP_TAG de la version de la imagen. Pero podriamos usar directamente la var BUILD_NUMER sin convertirla en una var interna APP_TAG
-   //   APP_TAG = "${BUILD_NUMBER}"
+   //   APP_TAG = "${BUILD_NUMBER}" <-- comentado ya que no varia su uso durante la explicación anterior.
         REGISTRY = "martooo"
         PASS = "arquitectura123"
        
