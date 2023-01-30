@@ -1,7 +1,7 @@
 pipeline {
 
     environment {
-        APP_NAME = "$JOB_NAME" 
+        APP_NAME = "${JOB_NAME}" 
    //   Jenkins tiene 2 tipos de variable de entorno, internas y externas. 
    //   Las internas son las que definimos nostros mismos dentro del jenkinsfile, dentro de enviroment,como por ej: REGISTRY y PASS
    //   Las externas son las que Jenkins nos permitie traernos desde afuera del Jenkinsfile, como por ej: BUILD_NUMBER y GIT_URL
