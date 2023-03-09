@@ -1,0 +1,40 @@
+apiVersion: apps/v1 # i se Usa apps/v1beta2 para versiones anteriores a 1.9.0
+kind: Deployment
+metadata:
+  name: web-definitiva-d
+spec:
+  selector:   #permite seleccionar un conjunto de objetos que cumplan las condicione
+    matchLabels:
+      app: web-definitiva
+  replicas: 2 # indica al controlador que ejecute 2 pods
+  template:   # Plantilla que define los containers
+    metadata:
+      labels:
+        app: web-definitiva
+    spec:
+      containers:
+      - name: web-definitiva
+        image: martooo/web-de-thompson:28
+        ports:
+        - containerPort: 80
+
+---
+
+#############
+# SERVICIO
+#############
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-def-svc
+  labels:
+     app: web-definitiva
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    nodePort: 30009
+    protocol: TCP
+  selector:
+     app: web-definitiva
+
